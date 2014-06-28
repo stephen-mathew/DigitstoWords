@@ -8,17 +8,62 @@ namespace NumberstoWords
 {
     public class DigitstoWords
     {
-        public string AmountInWords(string nAmount)
+        public string AmountInWords(string nAmount, int nSet)
         {
             decimal val;
+
+            //Checking of the input value is a number
             if (!Decimal.TryParse(nAmount, out val))
             {
                 return null;
             }
-            string tempDecValue;
+            string tempDecValue = "";
+
+            //Checking if the input value contains a decimal point
             if (nAmount.Contains("."))
             {
                 tempDecValue = nAmount.Substring(nAmount.IndexOf("."));
+
+                //Using only the part before the decimal point 
+                nAmount = nAmount.Remove(nAmount.IndexOf(tempDecValue));
+            } 
+
+            try
+            {
+                long intAmount = Int64.Parse(nAmount);
+                if (intAmount > 0)
+                {
+                    if ((intAmount.ToString().Trim().Length / 3) > (Convert.ToInt64(nAmount.ToString().Trim().Length / 3)))
+                    {
+                        nSet = Convert.ToInt32(nAmount.ToString().Trim().Length / 3) + 1;
+                    }
+                    else
+                    {
+                        nSet = Convert.ToInt32(nAmount.ToString().Trim().Length / 3);
+                    }
+                    long eAmount = Convert.ToInt64(intAmount.ToString().Trim().Substring(0, intAmount.ToString().Trim().Length - ((nSet) - 1) * 3));
+                    long multiplier = 10 ^ (((nSet - 1) * 3));
+
+                    string[] Ones = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
+                    string[] Teens = { "", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+                    string[] Tens = { "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+                    string[] HMBT = { "", "Hundred", "Thousand", "Million", "Billion", "Trillion" };
+
+                    intAmount = eAmount;
+
+                    int nHundred = (int)intAmount / 100;
+                    intAmount %= 100;
+                    int nTen = (int)intAmount / 10;
+                    intAmount %= 10;
+                    int nOne = (int)intAmount;
+
+
+
+                }
+            }
+            catch (Exception e)
+            {
+
             }
             return "";
         }
