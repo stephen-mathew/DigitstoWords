@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberstoWords", "Numbersto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingDigitstoWords", "TestingDigitstoWords\TestingDigitstoWords.csproj", "{9EE7A574-DBAF-4609-A68E-F12D688D2217}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSTestDigitstoWords", "VSTestDigitstoWords\VSTestDigitstoWords.csproj", "{0379DCEB-1C3E-4B89-AD16-365917834571}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9EE7A574-DBAF-4609-A68E-F12D688D2217}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EE7A574-DBAF-4609-A68E-F12D688D2217}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EE7A574-DBAF-4609-A68E-F12D688D2217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0379DCEB-1C3E-4B89-AD16-365917834571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0379DCEB-1C3E-4B89-AD16-365917834571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0379DCEB-1C3E-4B89-AD16-365917834571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0379DCEB-1C3E-4B89-AD16-365917834571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
