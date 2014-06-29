@@ -33,14 +33,6 @@ namespace NumberstoWords
                 long intAmount = Int64.Parse(nAmount);
                 if (intAmount > 0)
                 {
-                    //if ((intAmount.ToString().Trim().Length / 3) > (Convert.ToInt64(intAmount.ToString().Trim().Length / 3)))
-                    //{
-                    //    nSet = Convert.ToInt32(intAmount.ToString().Trim().Length / 3) + 1;
-                    //}
-                    //else
-                    //{
-                    //    nSet = Convert.ToInt32(intAmount.ToString().Trim().Length / 3);
-                    //}
                     if (nSet == -1)
                     {
                         nSet = ((((float)intAmount.ToString().Trim().Length / 3) > (intAmount.ToString().Trim().Length / 3))) ? (Convert.ToInt32(intAmount.ToString().Trim().Length / 3) + 1) : Convert.ToInt32(intAmount.ToString().Trim().Length / 3);
@@ -80,14 +72,6 @@ namespace NumberstoWords
                         {
                             wAmount = wAmount + Tens[nTen];
                             wAmount = (nOne > 0) ? (wAmount + "-" + Ones[nOne] + " ") : wAmount + " ";
-                            //if (nOne > 0)
-                            //{
-                            //    wAmount = wAmount + "-" + Ones[nOne] + " ";
-                            //}
-                            //else
-                            //{
-                            //    wAmount = wAmount + " ";
-                            //}
                         }
                     }
                     //This is for ones, 1 to 9
@@ -100,14 +84,6 @@ namespace NumberstoWords
                     }
                     wAmount = wAmount + HMBT[nSet] + " ";
                     wAmount = AmountInWords(Convert.ToString(Convert.ToInt64(nAmount) - (eAmount * multiplier)).Trim() + tempDecValue, wAmount, nSet - 1);
-                }
-                else
-                {
-                    //if (Int64.Parse(nAmount) == 0)
-                    //{
-                    //    nAmount=nAmount
-                    //}
-
                 }
             }
             catch (Exception e)
